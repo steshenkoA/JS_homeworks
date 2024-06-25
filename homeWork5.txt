@@ -1,0 +1,35 @@
+function checkProbabilityTheory(count) {
+  let numbers = [];
+  for (let i = 0; i < count; i++) {
+    let timestamp = Date.now() + i; //код з часов знайшла в інтернеті, бо не могла зробити так щоб рандомні числа були різні
+    let randomNumber = timestamp % 901 + 100;
+    numbers.push(randomNumber);
+  }
+  return numbers;
+}
+
+let evenNumber = 0;
+let oddNumber = 0;
+
+let randomNumbers = checkProbabilityTheory(20);
+console.log(randomNumbers);
+
+for (let i = 0; i < randomNumbers.length; i++) {
+  const number = randomNumbers[i];
+  if (number % 2 === 0) {
+    evenNumber++;
+  } else {
+    oddNumber++;
+  }
+}
+
+let countEvenNumber = evenNumber;
+let countOddNumber = oddNumber;
+
+console.log("Загальна кількість непарних чисел: " + countOddNumber);
+console.log("Загальна кількість парних чисел: " + countEvenNumber);
+
+let totalCount = countEvenNumber + countOddNumber
+let percentageEvenNumber = (countEvenNumber/totalCount)*100
+let percentageOddNumber = (countOddNumber/totalCount)*100
+console.log("Співвідношення парних до непарних чисел - " + percentageEvenNumber + "%" + "/" + percentageOddNumber + "%" )
