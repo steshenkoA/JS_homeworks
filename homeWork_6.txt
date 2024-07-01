@@ -1,0 +1,16 @@
+function getInfo(obj, key) {
+    return key + ": " + obj[key];
+}
+
+let user = {
+    name: "Ben",
+    age: 25,
+    profession: "teacher",
+    sex: "Man",
+};
+
+for (const key in user) {
+    if (user.hasOwnProperty(key) && key !== "getInfo") {
+        console.log(getInfo(user, key));
+    }
+}
