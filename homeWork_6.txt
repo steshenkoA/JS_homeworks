@@ -6,11 +6,10 @@ let user = {
     name: "Ben",
     age: 25,
     profession: "teacher",
-    sex: "Man",
 };
 
+user.sex =  "Man";
+
 for (const key in user) {
-    if (user.hasOwnProperty(key) && key !== "getInfo") {
         console.log(getInfo(user, key));
-    }
 }
