@@ -1,0 +1,17 @@
+function getInfo(obj, key) {
+    return key + ": " + obj[key];
+}
+
+let user = {
+    name: "Ben",
+    age: 25,
+    profession: "teacher",
+};
+
+user.sex = "Man"
+
+
+for (const key in user) {
+        console.log(getInfo(user, key));
+
+}
