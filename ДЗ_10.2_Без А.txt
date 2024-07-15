@@ -1,0 +1,3 @@
+let valueForTest = 'Wonderful, Joyful, Happiness, Time, Task, Apple';
+let pattern = /\b[^aA][b-zB-Z0-9._%+-]{5,}\b/g;
+console.log(valueForTest.match(pattern));
