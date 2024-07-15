@@ -1,0 +1,40 @@
+var arr = [
+    {
+        userName:"Test",
+        lastName:"Test",
+        email:"test.test@gmail.com"
+    },
+    {
+        userName:"Dmitro",
+        lastName:"Porohov",
+        email:"dmitro.porohov@yahoo.com"
+    },
+    {
+        userName:"Andrii",
+        lastName:"",
+        email:"andrii@mail.ru" // Нам такі не підходять
+    },
+];
+
+var result = [];
+for (var object of arr) {
+    result.push(object.email);
+}
+
+var email1 = result[0];
+var email2 = result[1];
+var email3 = result[2];
+
+let pattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
+
+function checkEmail(email) {
+    if (pattern.test(email)) {
+        console.log('Чи коректний email: ' + pattern.test(email) + ', ваш email: ' + email);
+    } else {
+        console.log('Ваш email некоректний: ' + email);
+    }
+}
+
+checkEmail(email1);
+checkEmail(email2);
+checkEmail(email3);
